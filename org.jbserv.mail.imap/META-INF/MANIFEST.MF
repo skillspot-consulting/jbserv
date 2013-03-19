@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IMAP Bundle
+Bundle-SymbolicName: org.jbserv.mail.imap
+Bundle-Version: 1.0.0.qualifier
+Bundle-Blueprint: OSGI-INF/blueprint/blueprint.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.jbserv.mail.data.model,
+ org.jbserv.mail.data.repository,
+ org.slf4j;version="1.7.2"

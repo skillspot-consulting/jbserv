@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.url">jdbc:hsqldb:hsql://localhost/jbserv</property>
+		<property name="connection.username">SA</property>
+		<property name="connection.password"></property>
+		<property name="connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>
+		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory
+		</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.hbm2ddl.auto">create-drop</property>
+		
+		<property name="c3p0.max_size">4</property>
+		<property name="c3p0.min_size">2</property>
+		
+		<mapping class="org.jbserv.mail.persistence.entity.MailboxEntity"/>
+		<mapping class="org.jbserv.mail.persistence.entity.MessageEntity"/>
+		<mapping class="org.jbserv.mail.persistence.entity.AccountEntity"/>
+		<mapping resource="query.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

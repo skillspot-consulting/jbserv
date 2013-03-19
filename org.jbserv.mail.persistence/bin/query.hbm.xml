@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.jbserv.mail.persistence.entity">
+	<!-- AccountEntity -->
+	<query name="AccountEntity.findAll">
+         <![CDATA[select a from AccountEntity a]]>
+	</query>
+	<query name="AccountEntity.findByUsername">
+         <![CDATA[select a from AccountEntity a where a.username = :username]]>
+	</query>
+	<query name="AccountEntity.findByUsernameAndPassword">
+         <![CDATA[select a from AccountEntity a where a.username = :username and a.password = :password]]>
+	</query>
+</hibernate-mapping>
