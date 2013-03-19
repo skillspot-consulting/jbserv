@@ -18,9 +18,10 @@ public interface AccountRepository {
 	 * 
 	 * @param account
 	 *            the account to be created
-	 * @return returns the created account or null on failure
+	 * @return returns the created account
+	 * @throws RepositoryException
 	 */
-	Account create(Account account);
+	Account create(Account account) throws RepositoryException;
 
 	/**
 	 * Create a new account with given username and password
@@ -29,7 +30,8 @@ public interface AccountRepository {
 	 *            the username of the account
 	 * @param password
 	 *            the password of the account
-	 * @return returns the created account or null on failure
+	 * @return returns the created account
+	 * @throws RepositoryException
 	 */
 	Account create(String username, String password);
 
@@ -37,8 +39,9 @@ public interface AccountRepository {
 	 * Retrieve all available accounts.
 	 * 
 	 * @return all accounts
+	 * @throws RepositoryException
 	 */
-	List<Account> getAll();
+	List<Account> getAll() throws RepositoryException;
 
 	/**
 	 * Retrieve account by username.
@@ -46,8 +49,9 @@ public interface AccountRepository {
 	 * @param username
 	 *            the username of the account
 	 * @return returns null if no account with given username exists
+	 * @throws RepositoryException
 	 */
-	Account getByUsername(String username);
+	Account getByUsername(String username) throws RepositoryException;
 
 	/**
 	 * Retrieve account by username and password.
@@ -58,8 +62,10 @@ public interface AccountRepository {
 	 *            the password of the account
 	 * @return returns null of no account with given username and password
 	 *         exists
+	 * @throws RepositoryException
 	 */
-	Account getByUsernameAndPassword(String username, String password);
+	Account getByUsernameAndPassword(String username, String password)
+			throws RepositoryException;
 
 	/**
 	 * Update the account.
@@ -67,15 +73,17 @@ public interface AccountRepository {
 	 * @param account
 	 *            the account to be updated
 	 * @return returns the updated account or null on failure
+	 * @throws RepositoryException
 	 */
-	Account update(Account account);
+	Account update(Account account) throws RepositoryException;
 
 	/**
 	 * Delete the account.
 	 * 
 	 * @param account
 	 *            the account to be deleted
+	 * @throws RepositoryException
 	 */
-	void delete(Account account);
+	void delete(Account account) throws RepositoryException;
 
 }
